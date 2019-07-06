@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Rafael Bizotti//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,21 +23,21 @@ namespace CEP.Controllers
         }
 
         [HttpGet("Enderecos")]
-        public IEnumerable<Endereco> MostraAll()
+        public IEnumerable<Endereco> ShowAll()
         {
             List<Endereco> enderecos = _context.endereco.ToList();
             return enderecos;
         }
 
         [HttpGet("Enderecos/{cep}")]
-        public IEnumerable<Endereco> MostraCEP(string cep)
+        public IEnumerable<Endereco> ShowCEP(string cep)
         {
             var endereco = _context.endereco.Where(s => s.cep == cep);
             return endereco;
         }
 
         [HttpGet("Enderecos/EnderecosPorEstado/{uf}")]
-        public IEnumerable<Endereco> MostraPorEstado(string uf)
+        public IEnumerable<Endereco> ShowPorEstado(string uf)
         {
             List<Endereco> enderecos = _context.endereco.Where(s => s.uf == uf).ToList();
             return enderecos;
