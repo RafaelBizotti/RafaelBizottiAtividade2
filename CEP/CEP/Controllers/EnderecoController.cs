@@ -14,7 +14,7 @@ namespace CEP.Controllers
 
         private readonly Context _context;
 
-        public EnderecoController(Context context)22
+        public EnderecoController(Context context)
         {
             _context = context;
         }
